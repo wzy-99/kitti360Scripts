@@ -357,7 +357,7 @@ class Annotation3D:
     def __init__(self, labelDir='', sequence=''):
 
         labelPath = glob.glob(os.path.join(labelDir, '*', '%s.xml' % sequence)) # train or test
-        if len(labelPath)!=1:
+        if len(labelPath)==0:
             raise RuntimeError('%s does not exist! Please specify KITTI360_DATASET in your environment path.' % labelPath)
         else:
             labelPath = labelPath[0]
