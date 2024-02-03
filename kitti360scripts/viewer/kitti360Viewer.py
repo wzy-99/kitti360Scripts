@@ -502,7 +502,7 @@ class Kitti360Viewer(QtWidgets.QMainWindow):
                     self.images = glob.glob( os.path.join( self.sequence , '*' + self.imageExt ) )
                     self.images.sort()
                     # filter out images without labels
-                    self.label_images = glob.glob(os.path.join(self.labelPath, "instance", "*.png"))
+                    self.label_images = glob.glob(os.path.join(self.labelPath, "*", "instance", "*.png"))
                     basenames = [os.path.basename(lb) for lb in self.label_images]
                     self.images = [fn for fn in self.images if os.path.basename(fn) in basenames]
                     self.imagesSequence = self.images
