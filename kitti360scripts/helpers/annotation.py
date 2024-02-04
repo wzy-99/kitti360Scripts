@@ -229,7 +229,7 @@ class Annotation2D:
     # Load confidence map
     def loadConfidence(self, imgPath):
         self.confidenceMap = io.imread(imgPath)
-        self.confidenceMap = np.asarray(self.confidenceMap).astype(np.float)/255.
+        self.confidenceMap = np.asarray(self.confidenceMap).astype(np.float32)/255.
 
     # Load instance id 
     def loadInstance(self, imgPath, gtType='instance', toImg=True, contourType='instance', semanticCt=True, instanceCt=True):
